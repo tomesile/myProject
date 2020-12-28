@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>线路进度创建</title>
+</head>
+<body class="hold-transition login-page">
+<div class="login-box">
+    <div class="login-logo">
+        <b>线路进度创建</b>
+    </div>
+    <!-- /.login-logo -->
+    <div class="login-box-body">
+        <p class="login-box-msg">本周总体施工情况：</p>
+
+        <form th:action="@{/xlProgressCreate}" method="post">
+            <div class="form-group has-feedback">
+                <textarea type="text" class="form-control" placeholder="铁塔组合 驾线阶段机具 设备投入" name="completedInWeek.one" required="required"/>
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <textarea type="text" class="form-control" placeholder="工程量" name="completedInWeek.two" required="required"/>
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <textarea type="text" class="form-control" placeholder="已完成工作量" name="completedInWeek.three" required="required"/>
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <p>工作情况：</p>
+            </div>
+            <div class="form-group has-feedback">
+                <textarea type="text" class="form-control" placeholder="下周重点工作计划" name="planForNextWeek" required="required"/>
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <textarea type="text" class="form-control" placeholder="存在的问题" name="questions" required="required"/>
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <textarea  type="text" class="form-control" placeholder="备注" name="infos" required="required"/>
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+
+
+            <div class="row">
+
+                <!-- /.col -->
+                <div class="col-xs-4">
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">提交</button>
+                </div>
+                <!-- /.col -->
+            </div>
+        </form>
+
+
+    </div>
+    <!-- /.login-box-body -->
+</div>
+<!-- /.login-box -->
+
+<div th:replace="script"></div>
+<div th:remove="all">
+    <!-- jQuery 2.2.3 -->
+    <script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <!-- Bootstrap 3.3.6 -->
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="../plugins/fastclick/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../dist/js/app.min.js"></script>
+    <!-- Sparkline -->
+    <script src="../plugins/sparkline/jquery.sparkline.min.js"></script>
+
+    <!-- SlimScroll 1.3.0 -->
+    <script src="../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+
+    <!-- iCheck -->
+    <script src="../plugins/iCheck/icheck.min.js"></script>
+    <script>
+        $(function () {
+            $('input').iCheck({
+                checkboxClass: 'icheckbox_square-blue',
+                radioClass: 'iradio_square-blue',
+                increaseArea: '20%' // optional
+            });
+        });
+    </script>
+</div>
+
+</body>
+</html>
